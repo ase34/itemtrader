@@ -8,6 +8,7 @@ import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+@SuppressWarnings("deprecation")
 public class ItemUtils {
 
     public static final Pattern CODE_PATTERN = Pattern.compile("(\\d+x)?((#(current|\\d))|\\d+|[a-zA-z_-]+)(:(\\d+))?");

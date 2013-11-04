@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import de.ase34.itemtrader.util.ItemUtils;
 
+@SuppressWarnings("deprecation")
 public class MaterialUtilTest extends AbstractTestingBase {
 
     public static final String string1 = "10x35:4";
