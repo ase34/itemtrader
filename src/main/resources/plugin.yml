@@ -1,0 +1,17 @@
+name: ${project.name}
+version: ${project.version} (${describe})
+authors: [ase34]
+main: de.ase34.itemtrader.ItemTraderPlugin
+softdepend: [TagAPI]
+permissions:
+    itemtrader.addoffer:
+        default: true
+    itemtrader.listoffers:
+        default: true
+    itemtrader.removeoffer:
+        default: true
+    itemtrader.starttrading:
+        default: true
+    itemtrader.stoptrading:
+        default: true
+    

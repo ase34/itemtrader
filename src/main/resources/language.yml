@@ -1,0 +1,43 @@
+no-movement: "&8[itemtrader] &6You are not allowed to move while trading! Do '&7/itemtrader stop&6' to stop."
+max-movement-stop-trading: "&8[itemtrader] &6Trading stopped!"
+no-console: "[itemtrader] Not available in console!"
+start-trading: "&8[itemtrader] &6You started trading! See '&7/itemtrader list&6' for the list of current offers."
+already-trading: "&8[itemtrader] &6You are already trading!"
+wrong-format: "&8[itemtrader]&6 '&7%1$s&6' is not a valid item-code! See '&7/help itemtrader itemcodes&6' for help on item-codes!"
+offer-added: "&8[itemtrader]&6 You added an offer buying &f%s&6 for &f%s&6!"
+offer-list-header: "&8[itemtrader]&6 Current offers (%d):"
+offer-list-element: "&8[itemtrader]&6 (%d) &f%s&6 for &f%s&6"
+cleared-offers: "&8[itemtrader]&6 Removed all current offers!"
+not-in-range: "&8[itemtrader]&6 &f%d&6 is not in range! (Must lay between 1 to %d)"
+removed-offer: "&8[itemtrader]&6 Removed offer No.%d!"
+stop-trading: "&8[itemtrader]&6 You stopped trading!"
+items-traded: "&8[itemtrader]&6 &f%s&6 bought &f%s&6 for giving &f%s&6 from you!"
+usage-prefix: "&cUsage: "
+addoffer-description: "Adds an offer buying <price> for <product>. Use 'simple' to simplify offer amount, 'notsimple' to leave its original form."
+removeoffer-description: "Removes the offer with the number <number>"
+start-description: "Starts trading"
+list-description: "Lists all current offers"
+stop-description: "Stops trading"
+itemtrader-description: "Main command for the itemtrader plugin"
+help-short-text: "Help section for the itemtrader plugin"
+help-preamble: "You can get help for the following topics:"
+itemcodes-help-short-text: "Information about the item-code syntax"
+itemcodes-help-full-text: |
+    &7Item codes represent stacks of items or blocks 
+    &7in textual form and have one of the following 
+    &7syntaxes:
+    &eVariant A&7:
+    &e  Syntax:&7 &f[<amount>x]<id>|<name>[:<data>]&7
+    &e  Examples:
+    &7    - &f10x4&7 - 10 blocks of cobblestone
+    &7    - &f35:14&7 - 1 block of red wool
+    &7    - &f2xlog:2&7 - 2 blocks of birch wood
+    &7
+    &eVariant B&7:
+    &e  Syntax:&7 &f[<amount>x]#(<slot>|current)[:<data>]&7
+    &e  Examples:
+    &7    - &f10x#2&7 - 10 10 items/blocks in slot 2
+    &7    - &f#current:2&7 - 1 item/block in current slot
+    &7      with data value 2
+    
+

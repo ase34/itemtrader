@@ -1,0 +1,5 @@
+allow-movement: true
+max-movement: 0.01
+name-prefix: "&6"
+simplify: true
+development-mode: false
