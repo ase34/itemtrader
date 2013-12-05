@@ -3,7 +3,7 @@ package de.ase34.itemtrader;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import net.minecraft.server.v1_6_R3.MerchantRecipeList;
+import net.minecraft.server.v1_7_R1.MerchantRecipeList;
 
 import org.bukkit.inventory.Inventory;
 

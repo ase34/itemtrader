@@ -1,9 +1,9 @@
 package de.ase34.itemtrader;
 
-import net.minecraft.server.v1_6_R3.MerchantRecipe;
+import net.minecraft.server.v1_7_R1.MerchantRecipe;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
-import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemStack;
 import org.bukkit.inventory.ItemStack;
 
 import de.ase34.itemtrader.util.NumberUtils;

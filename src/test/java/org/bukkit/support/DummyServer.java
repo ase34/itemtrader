@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
-import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftItemFactory;
-import org.bukkit.craftbukkit.v1_6_R3.util.Versioning;
+import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemFactory;
+import org.bukkit.craftbukkit.v1_7_R1.util.Versioning;
 
 public class DummyServer implements InvocationHandler {
     private static interface MethodHandler {

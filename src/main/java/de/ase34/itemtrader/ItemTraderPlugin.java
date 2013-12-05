@@ -3,7 +3,7 @@ package de.ase34.itemtrader;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_6_R3.CraftServer;
+import org.bukkit.craftbukkit.v1_7_R1.CraftServer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.ase34.itemtrader.command.ItemTraderMainCommand;

@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -113,7 +113,7 @@ public class ItemUtils {
     }
 
     public static String itemToString(ItemStack stack) {
-        net.minecraft.server.v1_6_R3.ItemStack nmsstack = CraftItemStack.asNMSCopy(stack);
+        net.minecraft.server.v1_7_R1.ItemStack nmsstack = CraftItemStack.asNMSCopy(stack);
         return String.format("%1$dx %4$s (%2$d:%3$d)", stack.getAmount(), stack.getTypeId(), stack.getDurability(),
                 nmsstack.getName());
     }

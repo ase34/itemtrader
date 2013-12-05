@@ -1,8 +1,8 @@
 package org.bukkit.support;
 
-import net.minecraft.server.v1_6_R3.MobEffectList;
+import net.minecraft.server.v1_7_R1.MobEffectList;
 
-import org.bukkit.craftbukkit.v1_6_R3.potion.CraftPotionBrewer;
+import org.bukkit.craftbukkit.v1_7_R1.potion.CraftPotionBrewer;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffectType;
 

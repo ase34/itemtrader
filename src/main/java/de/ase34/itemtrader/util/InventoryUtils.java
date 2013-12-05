@@ -3,7 +3,7 @@ package de.ase34.itemtrader.util;
 import java.util.HashMap;
 
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftInventoryCustom;
+import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftInventoryCustom;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 

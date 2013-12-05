@@ -1,12 +1,12 @@
 package de.ase34.itemtrader;
 
-import net.minecraft.server.v1_6_R3.EntityHuman;
-import net.minecraft.server.v1_6_R3.IMerchant;
-import net.minecraft.server.v1_6_R3.ItemStack;
-import net.minecraft.server.v1_6_R3.MerchantRecipe;
-import net.minecraft.server.v1_6_R3.MerchantRecipeList;
+import net.minecraft.server.v1_7_R1.EntityHuman;
+import net.minecraft.server.v1_7_R1.IMerchant;
+import net.minecraft.server.v1_7_R1.ItemStack;
+import net.minecraft.server.v1_7_R1.MerchantRecipe;
+import net.minecraft.server.v1_7_R1.MerchantRecipeList;
 
-import org.bukkit.craftbukkit.v1_6_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_7_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
@@ -83,7 +83,7 @@ public class TradingPlayer implements IMerchant {
     // Gets the customer
     @Override
     @Deprecated
-    public EntityHuman m_() {
+    public EntityHuman b() {
         return ((CraftPlayer) customer).getHandle();
     }
 
