@@ -2,8 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ase34</groupId>
   <artifactId>itemtrader</artifactId>
-  <version>0.3.6-SNAPSHOT</version>
-
+  <version>0.3.6</version>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -41,12 +41,12 @@
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
-      <version>1.7.2-R0.1-SNAPSHOT</version>
+      <version>1.7.2-R0.2</version>
     </dependency>
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>craftbukkit</artifactId>
-      <version>1.7.2-R0.1-SNAPSHOT</version>
+      <version>1.7.2-R0.2</version>
     </dependency>
     <dependency>
       <groupId>org.kitteh</groupId>

@@ -13,6 +13,5 @@ public class DummyPotions {
         PotionEffectType.stopAcceptingRegistrations();
     }
 
-    public static void setup() {
-    }
+    public static void setup() {}
 }

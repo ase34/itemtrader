@@ -8,6 +8,5 @@ public class DummyEnchantments {
         org.bukkit.enchantments.Enchantment.stopAcceptingRegistrations();
     }
 
-    public static void setup() {
-    }
+    public static void setup() {}
 }
