@@ -6,3 +6,6 @@
 # Maven
 /build.xml
 /target
+
+# Bukkit Tests
+/logs
