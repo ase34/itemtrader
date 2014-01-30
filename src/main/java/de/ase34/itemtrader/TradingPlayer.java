@@ -35,6 +35,10 @@ public class TradingPlayer implements IMerchant {
     }
 
     public void useOffer(Offer offer) {
+        if (customer == null) {
+            return;
+        }
+        
         Inventory traderInventory = player.getInventory();
 
         traderInventory.removeItem(offer.getProduct());
@@ -84,6 +88,9 @@ public class TradingPlayer implements IMerchant {
     @Override
     @Deprecated
     public EntityHuman b() {
+        if (customer == null) {
+            return null;
+        }
         return ((CraftPlayer) customer).getHandle();
     }
 

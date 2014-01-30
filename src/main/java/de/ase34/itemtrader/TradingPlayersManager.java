@@ -55,7 +55,11 @@ public class TradingPlayersManager {
 
     public TradingPlayer getTradingPlayerByCustomer(Player customer) {
         for (TradingPlayer trader : tradingPlayers) {
-            if (trader.getCustomer().equals(customer)) {
+            Player customer2 = trader.getCustomer();
+            if (customer2 == null) {
+                continue;
+            }
+            if (customer2.equals(customer)) {
                 return trader;
             }
         }
