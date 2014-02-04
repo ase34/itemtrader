@@ -17,7 +17,7 @@ public class NameTagListener implements Listener {
 
     @EventHandler
     public void onPlayerNameTag(PlayerReceiveNameTagEvent ev) {
-        if (plugin.getTrandingPlayersManager().isTrading(ev.getNamedPlayer())) {
+        if (plugin.getTrandingPlayersManager().getTradingPlayer(ev.getPlayer()).isCurrentlyTrading()) {
             String name = ev.isModified() ? ev.getTag() : ev.getPlayer().getName();
             ev.setTag(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("name-prefix")) + name);
         }

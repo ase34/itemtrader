@@ -27,7 +27,7 @@ public class OfferListCommand extends SubCommand {
             return true;
         }
 
-        OfferList list = plugin.getOfferListManager().getOfferList((Player) sender);
+        OfferList list = plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).getOffers();
 
         plugin.getLanguageStrings().send(sender, "offer-list-header", list.size());
         for (int i = 0; i < list.size(); i++) {

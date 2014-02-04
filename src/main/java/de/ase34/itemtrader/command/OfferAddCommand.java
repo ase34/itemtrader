@@ -53,7 +53,7 @@ public class OfferAddCommand extends SubCommand {
         if (simplify)
             offer.simplify();
 
-        plugin.getOfferListManager().addOffer((Player) sender, offer);
+        plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).getOffers().add(offer);
 
         plugin.getLanguageStrings().send(sender, "offer-added", ItemUtils.itemToString(price),
                 ItemUtils.itemToString(product));

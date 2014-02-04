@@ -1,74 +1,46 @@
 package de.ase34.itemtrader;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.bukkit.entity.Player;
-import org.kitteh.tag.TagAPI;
 
 public class TradingPlayersManager {
 
-    private List<TradingPlayer> tradingPlayers;
-    private ItemTraderPlugin plugin;
-
-    public TradingPlayersManager(ItemTraderPlugin plugin) {
-        tradingPlayers = new ArrayList<TradingPlayer>();
-        this.plugin = plugin;
-    }
-
-    public boolean startTrading(Player player, OfferList offers) {
-        updatePlayerName(player);
-        return tradingPlayers.add(new TradingPlayer(plugin, player, offers));
-    }
-
-    public boolean stopTrading(Player player) {
-        updatePlayerName(player);
-        TradingPlayer trader = getTradingPlayer(player);
-        return trader != null ? tradingPlayers.remove(trader) : false;
-    }
+    private ArrayList<TradingPlayer> tradingPlayers = new ArrayList<TradingPlayer>();
 
     public TradingPlayer getTradingPlayer(Player player) {
-        for (TradingPlayer trader : tradingPlayers) {
-            if (trader.getPlayer().equals(player)) {
-                return trader;
+        for (TradingPlayer tradingPlayer : tradingPlayers) {
+            if (tradingPlayer.getPlayer().equals(player)) {
+                return tradingPlayer;
+            }
+        }
+
+        TradingPlayer newPlayer = new TradingPlayer(player);
+        tradingPlayers.add(newPlayer);
+        return newPlayer;
+    }
+
+    public TradingPlayer getTradingPlayerFromCustomer(Player customer) {
+        for (TradingPlayer tradingPlayer : tradingPlayers) {
+            if (tradingPlayer.getCustomers().contains(customer)) {
+                return tradingPlayer;
             }
         }
         return null;
     }
 
-    public TradingPlayer getTradingPlayer(String playername) {
-        for (TradingPlayer trader : tradingPlayers) {
-            if (trader.getPlayer().getName().equals(playername)) {
-                return trader;
+    public void removeTradingPlayer(Player player) {
+        for (int i = 0; i < tradingPlayers.size(); i++) {
+            TradingPlayer tradingPlayer = tradingPlayers.get(i);
+            if (tradingPlayer.getPlayer().equals(player)) {
+                tradingPlayers.remove(i);
             }
         }
-        return null;
     }
 
-    public boolean isTrading(Player player) {
-        return getTradingPlayer(player) != null;
-    }
-
-    public boolean isTrading(String playername) {
-        return getTradingPlayer(playername) != null;
-    }
-
-    public TradingPlayer getTradingPlayerByCustomer(Player customer) {
-        for (TradingPlayer trader : tradingPlayers) {
-            Player customer2 = trader.getCustomer();
-            if (customer2 == null) {
-                continue;
-            }
-            if (customer2.equals(customer)) {
-                return trader;
-            }
+    public void removeCustomer(Player customer) {
+        for (TradingPlayer tradingPlayer : tradingPlayers) {
+            tradingPlayer.getCustomers().remove(customer);
         }
-        return null;
     }
-
-    private void updatePlayerName(Player player) {
-        if (plugin.getServer().getPluginManager().getPlugin("TagAPI") != null)
-            TagAPI.refreshPlayer(player);
-    }
-
 }

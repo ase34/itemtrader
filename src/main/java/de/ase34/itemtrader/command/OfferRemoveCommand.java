@@ -30,7 +30,7 @@ public class OfferRemoveCommand extends SubCommand {
             return true;
         }
 
-        OfferList list = plugin.getOfferListManager().getOfferList((Player) sender);
+        OfferList list = plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).getOffers();
         if (args[0].equalsIgnoreCase("all")) {
             list.clear();
             plugin.getLanguageStrings().send(sender, "cleared-offers");

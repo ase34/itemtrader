@@ -24,7 +24,7 @@ public class EventUtils {
         }
 
         Player player = (Player) ev.getWhoClicked();
-        if (plugin.getTrandingPlayersManager().getTradingPlayerByCustomer(player) == null) {
+        if (plugin.getTrandingPlayersManager().getTradingPlayerFromCustomer(player) == null) {
             return;
         }
 

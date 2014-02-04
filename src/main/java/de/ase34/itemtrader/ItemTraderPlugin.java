@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import de.ase34.itemtrader.command.ItemTraderMainCommand;
 import de.ase34.itemtrader.help.ItemTraderHelpTopic;
 import de.ase34.itemtrader.listener.InventoryListener;
+import de.ase34.itemtrader.listener.ItemTraderListener;
 import de.ase34.itemtrader.listener.NameTagListener;
 import de.ase34.itemtrader.listener.PlayerListener;
 import de.ase34.itemtrader.util.LanguageStrings;
@@ -18,7 +19,6 @@ public class ItemTraderPlugin extends JavaPlugin {
 
     private TradingPlayersManager manager;
     private LanguageStrings language;
-    private OfferListManager offers;
     private ParentCommand command;
 
     @Override
@@ -28,8 +28,7 @@ public class ItemTraderPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        manager = new TradingPlayersManager(this);
-        offers = new OfferListManager();
+        manager = new TradingPlayersManager();
 
         getDataFolder().mkdir();
         saveDefaultConfig();
@@ -42,6 +41,7 @@ public class ItemTraderPlugin extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
+        getServer().getPluginManager().registerEvents(new ItemTraderListener(this), this);
         if (getServer().getPluginManager().getPlugin("TagAPI") != null)
             getServer().getPluginManager().registerEvents(new NameTagListener(this), this);
 
@@ -64,10 +64,6 @@ public class ItemTraderPlugin extends JavaPlugin {
 
     public LanguageStrings getLanguageStrings() {
         return language;
-    }
-
-    public OfferListManager getOfferListManager() {
-        return offers;
     }
 
     public ParentCommand getParentCommand() {

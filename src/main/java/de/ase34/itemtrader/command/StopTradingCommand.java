@@ -23,8 +23,7 @@ public class StopTradingCommand extends SubCommand {
             return true;
         }
 
-        Player player = (Player) sender;
-        plugin.getTrandingPlayersManager().stopTrading(player);
+        plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).stopTrading();
 
         plugin.getLanguageStrings().send(sender, "stop-trading");
         return true;

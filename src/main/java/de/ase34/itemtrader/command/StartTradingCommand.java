@@ -23,8 +23,8 @@ public class StartTradingCommand extends SubCommand {
             return true;
         }
 
-        Player player = (Player) sender;
-        if (plugin.getTrandingPlayersManager().startTrading(player, plugin.getOfferListManager().getOfferList(player))) {
+        if (!plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).isCurrentlyTrading()) {
+            plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).startTrading();
             plugin.getLanguageStrings().send(sender, "start-trading");
         } else {
             plugin.getLanguageStrings().send(sender, "already-trading");

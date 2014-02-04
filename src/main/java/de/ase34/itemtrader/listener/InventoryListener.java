@@ -11,6 +11,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 
 import de.ase34.itemtrader.ItemTraderPlugin;
 import de.ase34.itemtrader.TradingPlayer;
+import de.ase34.itemtrader.VirtualMerchant;
 
 public class InventoryListener implements Listener {
 
@@ -36,7 +37,7 @@ public class InventoryListener implements Listener {
         }
 
         final Player player = (Player) ev.getWhoClicked();
-        if (plugin.getTrandingPlayersManager().getTradingPlayerByCustomer(player) == null) {
+        if (plugin.getTrandingPlayersManager().getTradingPlayer(player) == null) {
             return;
         }
         
@@ -57,12 +58,12 @@ public class InventoryListener implements Listener {
         }
 
         Player player = (Player) ev.getPlayer();
-        TradingPlayer trader = plugin.getTrandingPlayersManager().getTradingPlayerByCustomer(player);
+        TradingPlayer trader = plugin.getTrandingPlayersManager().getTradingPlayerFromCustomer(player);
         if (trader == null) {
             return;
         }
 
-        trader.setCustomer(null);
+        trader.getCustomers().remove(player);
         player.setMetadata("itemtrader-exit-timestamp", new FixedMetadataValue(plugin, System.currentTimeMillis()));
     }
 
