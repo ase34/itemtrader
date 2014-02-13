@@ -1,5 +1,5 @@
 name: ${project.name}
-version: ${project.version} (git-${git.commit.id.describe})
+version: ${project.version} (${describe})
 authors: [ase34]
 main: de.ase34.itemtrader.ItemTraderPlugin
 softdepend: [TagAPI]
