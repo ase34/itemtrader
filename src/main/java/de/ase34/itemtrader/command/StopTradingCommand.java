@@ -4,6 +4,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import de.ase34.itemtrader.ItemTraderPlugin;
+import de.ase34.itemtrader.TradingPlayer;
 import de.ase34.itemtrader.util.command.SubCommand;
 
 public class StopTradingCommand extends SubCommand {
@@ -23,9 +24,14 @@ public class StopTradingCommand extends SubCommand {
             return true;
         }
 
-        plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender).stopTrading();
+        TradingPlayer tradingPlayer = plugin.getTrandingPlayersManager().getTradingPlayer((Player) sender);
+        if (tradingPlayer.isCurrentlyTrading()) {
+            tradingPlayer.stopTrading();
+            plugin.getLanguageStrings().send(sender, "stop-trading");
+        } else {
+            plugin.getLanguageStrings().send(sender, "already-stopped-trading");
+        }
 
-        plugin.getLanguageStrings().send(sender, "stop-trading");
         return true;
     }
 
